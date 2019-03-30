@@ -1,0 +1,3 @@
+mutation removeSchema($id: ID!) {
+  removeSchema(id: $id)
+}

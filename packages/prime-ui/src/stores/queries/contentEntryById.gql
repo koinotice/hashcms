@@ -1,0 +1,20 @@
+query contentEntryById($id: ID!, $releaseId: ID, $locale: String) {
+  Document(id: $id, releaseId: $releaseId, locale: $locale) {
+    id
+    documentId
+    schemaId
+    releaseId
+    locale
+    publishedAt
+    data
+    primary
+    createdAt
+    updatedAt
+    versions {
+      id
+      publishedAt
+      createdAt
+      updatedAt
+    }
+  }
+}

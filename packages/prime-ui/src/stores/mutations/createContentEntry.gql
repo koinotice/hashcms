@@ -1,0 +1,13 @@
+mutation createDocument($input: DocumentInput!) {
+  createDocument(input: $input) {
+    id
+    documentId
+    schemaId
+    releaseId
+    locale
+    data
+    publishedAt
+    createdAt
+    updatedAt
+  }
+}

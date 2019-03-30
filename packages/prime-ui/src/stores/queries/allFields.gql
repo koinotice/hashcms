@@ -1,0 +1,9 @@
+query {
+  allFields {
+    type
+    title
+    description
+    options
+    ui
+  }
+}

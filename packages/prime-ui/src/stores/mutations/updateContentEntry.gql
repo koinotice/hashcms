@@ -1,0 +1,19 @@
+mutation updateDocument($id: ID!, $data: JSON, $locale: String, $releaseId: ID) {
+  updateDocument(id: $id, data: $data, locale: $locale, releaseId: $releaseId) {
+    id
+    documentId
+    schemaId
+    releaseId
+    locale
+    data
+    publishedAt
+    createdAt
+    updatedAt
+    versions {
+      id
+      publishedAt
+      createdAt
+      updatedAt
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  getUser {
+    id
+    emails {
+      address
+      verified
+    }
+    username
+    profile
+    ability
+  }
+}

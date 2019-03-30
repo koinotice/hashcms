@@ -1,0 +1,11 @@
+:global(.ant-layout-header).toolbar {
+  position: sticky;
+  top: 0;
+
+  z-index: 9;
+
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 24, 36, 0.06);
+  display: flex;
+  align-items: center;
+}

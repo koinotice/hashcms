@@ -1,0 +1,40 @@
+import { flow, types } from 'mobx-state-tree';
+import { client } from '../../utils/client';
+import { PUBLISH_CONTENT_RELEASE } from '../mutations';
+
+export const ContentRelease = types
+  .model('ContentRelease', {
+    id: types.identifier,
+    name: types.maybeNull(types.string),
+    documentsCount: types.number,
+    description: types.maybeNull(types.string),
+    scheduledAt: types.maybeNull(types.Date),
+    publishedAt: types.maybeNull(types.Date),
+    updatedAt: types.maybeNull(types.Date),
+  })
+  .preProcessSnapshot(snapshot => ({
+    ...snapshot,
+    documentsCount: Number(snapshot.documentsCount || 0),
+    scheduledAt: snapshot.scheduledAt ? new Date(snapshot.scheduledAt) : null,
+    publishedAt: snapshot.publishedAt ? new Date(snapshot.publishedAt) : null,
+    updatedAt: snapshot.updatedAt ? new Date(snapshot.updatedAt) : null,
+  }))
+  .actions(self => ({
+    update(data: any) {
+      const { name, description, scheduledAt } = data;
+      self.name = name;
+      self.description = description;
+      self.scheduledAt = scheduledAt ? new Date(scheduledAt) : null;
+    },
+    publish: flow(function*() {
+      const res: any = yield client.mutate({
+        mutation: PUBLISH_CONTENT_RELEASE,
+        variables: {
+          id: self.id,
+        },
+      });
+      if (res.data && res.data.publishRelease) {
+        self.publishedAt = new Date();
+      }
+    }),
+  }));

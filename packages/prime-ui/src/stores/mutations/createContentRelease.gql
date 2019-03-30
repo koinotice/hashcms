@@ -1,0 +1,12 @@
+mutation createRelease($input: ReleaseInput!) {
+  createRelease(input: $input) {
+    id
+    name
+    description
+    scheduledAt
+    publishedAt
+    publishedBy
+    updatedAt
+    createdAt
+  }
+}

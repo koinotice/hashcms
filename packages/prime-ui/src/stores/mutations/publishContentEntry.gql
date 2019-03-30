@@ -1,0 +1,18 @@
+mutation publishDocument($id: ID!) {
+  publishDocument(id: $id) {
+    id
+    locale
+    data
+    schemaId
+    releaseId
+    publishedAt
+    createdAt
+    updatedAt
+    versions {
+      id
+      publishedAt
+      createdAt
+      updatedAt
+    }
+  }
+}

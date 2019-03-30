@@ -1,0 +1,12 @@
+mutation updateRelease($id: ID!, $input: ReleaseInput!) {
+  updateRelease(id: $id, input: $input) {
+    id
+    name
+    description
+    scheduledAt
+    publishedAt
+    publishedBy
+    updatedAt
+    createdAt
+  }
+}

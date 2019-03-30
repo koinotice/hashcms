@@ -1,0 +1,17 @@
+query allReleases {
+  allReleases {
+    edges {
+      node {
+        id
+        name
+        description
+        documentsCount
+        scheduledAt
+        publishedAt
+        publishedBy
+        updatedAt
+        createdAt
+      }
+    }
+  }
+}

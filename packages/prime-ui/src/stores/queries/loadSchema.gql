@@ -1,0 +1,29 @@
+query loadSchema(
+    $contentTypeId: ID
+    $entryId: ID
+  ) {
+  getContentTypeSchema(
+    contentTypeId: $contentTypeId
+    entryId: $entryId
+    ) {
+    title
+    fields {
+      id
+      name
+      title
+      description
+      type
+      options
+      isDisplay
+      contentTypeId
+      fields {
+        id
+        name
+        title
+        description
+        type
+        options
+      }
+    }
+  }
+}

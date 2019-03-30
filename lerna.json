@@ -1,6 +1,10 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "version": "0.0.0"
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "0.3.3-beta.8",
+  "command": {
+    "publish": {
+      "conventionalCommits": true
+    }
+  }
 }

@@ -1,0 +1,10 @@
+mutation CreateSchema($input: SchemaInput!) {
+  createSchema(input: $input) {
+    id
+    name
+    title
+    groups
+    settings
+    variant
+  }
+}

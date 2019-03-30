@@ -1,0 +1,38 @@
+query allSchemas {
+  allSchemas {
+    edges {
+      node {
+        id
+        name
+        title
+        groups
+        settings
+        variant
+        documentCount
+        fields {
+          title
+          fields {
+            id
+            name
+            title
+            description
+            type
+            options
+            primary
+            schemaId
+            fields {
+              id
+              name
+              title
+              description
+              type
+              options
+              primary
+              schemaId
+            }
+          }
+        }
+      }
+    }
+  }
+}

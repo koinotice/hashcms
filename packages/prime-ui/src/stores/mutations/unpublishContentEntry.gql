@@ -1,0 +1,19 @@
+mutation unpublishDocument($id: ID!) {
+  unpublishDocument(id: $id) {
+    id
+    releaseId
+    schemaId
+    releaseId
+    locale
+    publishedAt
+    data
+    createdAt
+    updatedAt
+    versions {
+      id
+      publishedAt
+      createdAt
+      updatedAt
+    }
+  }
+}

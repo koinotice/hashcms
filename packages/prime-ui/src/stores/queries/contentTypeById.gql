@@ -1,0 +1,32 @@
+query contentTypeById($id: ID, $name: String) {
+  Schema(id: $id, name: $name) {
+    id
+    name
+    title
+    variant
+    groups
+    settings
+    documentCount
+    fields {
+      title
+      fields {
+        id
+        name
+        title
+        description
+        type
+        options
+        primary
+        schemaId
+        fields {
+          id
+          name
+          title
+          description
+          type
+          options
+        }
+      }
+    }
+  }
+}

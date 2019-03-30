@@ -1,0 +1,53 @@
+{
+  "name": "@primecms/field-string",
+  "version": "0.3.3-beta.8",
+  "description": "String Field for Prime CMS",
+  "author": "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
+  "homepage": "https://github.com/birkir/prime/tree/master/packages/prime-field-string",
+  "license": "MIT",
+  "main": "lib/index",
+  "typings": "lib/index",
+  "prime": "lib/ui",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "start": "tsc --watch; webpack --config ../prime-tools/webpack.config.js --watch",
+    "precompile": "yarn clean",
+    "compile": "tsc; rimraf lib/ui; webpack --config ../prime-tools/webpack.config.js",
+    "prepublishOnly": "yarn compile",
+    "testonly": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "coverage": "yarn testonly --coverage"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/birkir/prime/tree/master/packages/prime-field-string"
+  },
+  "dependencies": {
+    "@primecms/field": "^0.3.3-beta.6",
+    "antd": "3.13.6",
+    "apollo-server-core": "^2.3.1",
+    "braft-editor": "2.1.34",
+    "draft-js": "^0.10.5",
+    "graphql": "^14.1.1",
+    "markdown-draft-js": "1.3.0",
+    "react": "^16.8.0-alpha.1",
+    "react-dom": "^16.8.0-alpha.1"
+  },
+  "devDependencies": {
+    "@types/draft-js": "0.10.29",
+    "@types/graphql": "14.0.7",
+    "ts-loader": "5.3.3",
+    "webpack-cli": "3.2.3"
+  },
+  "gitHead": "008cb9492c0499bf65b4e7621467dcefb796fd9d"
+}

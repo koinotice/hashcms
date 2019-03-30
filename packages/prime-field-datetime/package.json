@@ -1,0 +1,49 @@
+{
+  "name": "@primecms/field-datetime",
+  "version": "0.3.3-beta.6",
+  "description": "DateTime Field for Prime CMS",
+  "author": "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
+  "homepage": "https://github.com/birkir/prime/tree/master/packages/prime-field-datetime",
+  "license": "MIT",
+  "main": "lib/index",
+  "typings": "lib/index",
+  "prime": "lib/ui",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "start": "tsc --watch",
+    "precompile": "yarn clean",
+    "compile": "tsc; rimraf lib/ui; webpack --config ../prime-tools/webpack.config.js",
+    "prepublishOnly": "yarn compile",
+    "testonly": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "coverage": "yarn testonly --coverage"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/birkir/prime/tree/master/packages/prime-field-datetime"
+  },
+  "dependencies": {
+    "@primecms/field": "^0.3.3-beta.6",
+    "antd": "3.13.6",
+    "graphql": "^14.1.1",
+    "graphql-iso-date": "^3.6.1",
+    "react": "^16.8.0-alpha.1",
+    "react-dom": "^16.8.0-alpha.1"
+  },
+  "devDependencies": {
+    "@types/graphql": "14.0.7",
+    "ts-loader": "5.3.3",
+    "webpack-cli": "3.2.3"
+  },
+  "gitHead": "47d760104a005afa5bb17cac6a9e609bec51eae4"
+}
